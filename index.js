@@ -8,6 +8,7 @@ const authorInput = document.querySelector('.author-value');
 const dateSpan = document.querySelector('.date');
 const listBookElement = document.querySelector('#list-book');
 const booksSection = document.querySelector('.books');
+const creaateBookSection = document.querySelector('.create-book');
 const contactSection = document.querySelector('.contact');
 
 listBookElement.addEventListener('click', () => {
@@ -18,12 +19,12 @@ listBookElement.addEventListener('click', () => {
   const booksContainer = booksSection;
   displayBooks(booksContainer, books);
   // Hide the add book form
-  document.querySelector('.create-book').style.display = 'none';
+  creaateBookSection.style.display = 'none';
 });
 
 const addBookElement = document.querySelector('#add-new');
 addBookElement.addEventListener('click', () => {
-  document.querySelector('.create-book').style.display = 'flex';
+  creaateBookSection.style.display = 'flex';
   booksSection.style.display = 'none';
   contactSection.style.display = 'none';
 });
@@ -54,14 +55,14 @@ booksSection.addEventListener('click', removeBook);
 const contactElement = document.querySelector('#contact');
 contactElement.addEventListener('click', () => {
   contactSection.style.display = 'flex';
-  document.querySelector('.create-book').style.display = 'none';
+  creaateBookSection.style.display = 'none';
   booksSection.style.display = 'none';
 });
 
 window.onload = () => {
   booksSection.style.display = 'flex';
   contactSection.style.display = 'none';
-  document.querySelector('.create-book').style.display = 'none';
+  creaateBookSection.style.display = 'none';
 
   setDateToHTML(dateSpan, DateTime);
 
